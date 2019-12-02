@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // import "./styles/Home.css";
 
-export default class Home extends Component {
+class Home extends React.Component {
   render() {
     return (
       <section className="">
@@ -15,3 +15,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home;
