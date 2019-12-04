@@ -1,3 +1,25 @@
+<<<<<<< HEAD
 html body {
   background: url("../images/background.png") no-repeat;
+=======
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.buttonStart {
+    font-size: 3em;
+    padding: 10px 0px;
+    text-decoration: none;
+    width: 95%;
+    border: 20px solid #008c8e;
+    border-radius: 30px;
+    background-color: transparent;
+    font-family: 'VT323', monospace;
+    font-weight: bold;
+    color: #008c8e;
+>>>>>>> c667d325e6c88f9e240214ccbf2797632b486dbd
 }

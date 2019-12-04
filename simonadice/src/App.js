@@ -3,9 +3,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-import Juego from "./pages/Juego";
+// import Juego from "./pages/Juego";
 import Register from "./pages/Register";
-import Goodbye from "./pages/GoodBye"
+import Goodbye from "./pages/GoodBye";
 
 function App() {
   return (
@@ -13,18 +13,9 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/game" component={Juego}></Route>
+          {/* <Route exact path="/game" component={Juego}></Route> */}
           <Route exact path="/register" component={Register}></Route>
           <Route exact path="/goodbye" component={Goodbye}></Route>
-
-          
-          {/* <Route
-            exact
-            path="/badges/:badgeId/edit"
-            component={BadgeEdit}
-          ></Route>
-          <Route exact path="/badges/:badgeId" component={BadgeDetails}></Route>
-          <Route component={NotFound}></Route> */}
         </Switch>
       </Layout>
     </BrowserRouter>
