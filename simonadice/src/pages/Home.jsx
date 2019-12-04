@@ -7,7 +7,7 @@ import "./styles/Home.css";
 class Home extends React.Component {
   render() {
     return (
-      <section className="">
+      <section className="main-container">
         <div className="logo-container">
           <img src={logo} alt="logo women who code" />
         </div>
