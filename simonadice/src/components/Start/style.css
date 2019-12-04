@@ -1,25 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
 .buttonContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonStart {
-    font-size: 4em;
-    text-decoration: none;
-    border: 6px solid #008c8e;
-    border-radius: 30px;
-    background-color: transparent;
-    font-family: 'VT323', monospace;
-    font-weight: bold;
-    color: #008c8e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  text-decoration: none;
+  border: 6px solid #008c8e;
+  border-radius: 20px;
+  background-color: transparent;
+  font-family: "VT323", monospace;
+  font-weight: bold;
+  color: #008c8e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.buttonStart p {
-    padding: 0;
-    
+.buttonStart:hover {
+  background-color: #008c8e;
+  color: white;
+}
+
+.buttonStart > p {
+  font-size: 3em;
+  margin: 0 1em;
+  line-height: 60px;
 }
