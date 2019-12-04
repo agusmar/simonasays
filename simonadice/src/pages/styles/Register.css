@@ -23,6 +23,7 @@
 .registro__container--form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px
 }
 
 .registro__container--remember label {
@@ -129,5 +130,6 @@
         border: none;
         padding: 0px;
         width: 70%;
+       
     }
 }

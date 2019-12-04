@@ -1,0 +1,32 @@
+.contact-us{
+    text-align: center;
+    margin-top: 100px
+}
+.wrap-contact{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px
+}
+.net{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    
+}
+
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+
+.hour{
+    font-size: 70px;
+    font-weight: 900;
+    margin: 40px
+}
+
+.info{
+    font-size: 20px;
+    margin: 10px
+}
