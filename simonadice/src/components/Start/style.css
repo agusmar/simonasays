@@ -8,13 +8,15 @@
 
 .buttonStart {
     font-size: 3em;
-    padding: 10px 0px;
+    padding: 0px 39px;
     text-decoration: none;
-    width: 95%;
-    border: 20px solid #008c8e;
+    border: 13px solid #008c8e;
     border-radius: 30px;
     background-color: transparent;
     font-family: 'VT323', monospace;
     font-weight: bold;
     color: #008c8e;
+    cursor: pointer;
+    letter-spacing: -3px;
+    word-spacing: -10px;
 }
