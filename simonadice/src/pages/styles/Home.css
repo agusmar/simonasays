@@ -1,0 +1,21 @@
+html body {
+  background-color: black;
+}
+
+.main-container{
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.logo-container {
+  width: 200px;
+}
+
+img {
+  width: 100%;
+}
+

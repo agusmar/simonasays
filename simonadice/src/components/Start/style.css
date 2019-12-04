@@ -3,20 +3,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2em;
 }
 
 .buttonStart {
-    font-size: 3em;
-    padding: 0px 39px;
+    font-size: 4em;
     text-decoration: none;
-    border: 13px solid #008c8e;
+    border: 6px solid #008c8e;
     border-radius: 30px;
     background-color: transparent;
     font-family: 'VT323', monospace;
     font-weight: bold;
     color: #008c8e;
-    cursor: pointer;
-    letter-spacing: -3px;
-    word-spacing: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonStart p {
+    padding: 0;
+    
 }
