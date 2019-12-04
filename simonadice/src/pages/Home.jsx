@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../components/images/Logo_WWCode_rainbow.png";
+import Start from "../components/Start";
 // import "./styles/Home.css";
 
 class Home extends React.Component {
   render() {
     return (
       <section className="">
-        <h1>PAGINA DE BIENVENIDA</h1>
+        <img src={logo} alt=""/>
         <Link className="btn btn-primary" to="/game">
-          Empezar a jugar
+          <Start />
         </Link>
       </section>
     );
