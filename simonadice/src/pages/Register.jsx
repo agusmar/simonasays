@@ -8,13 +8,12 @@ class Register extends React.Component {
         <React.Fragment>
           <section class="registro">
             <section class="registro__container">
-              <h2>Regístrate</h2>
               <form action="" class="registro__container--form">
-                <input type="text" class="input" placeholder="Nombre" />
-                <input type="text" class="input" placeholder="Correo" />
+                <input type="text" class="input" placeholder="nombre" />
+                <input type="text" class="input" placeholder="email" />
               
                 
-                <button class="button">Enviar</button>
+                <button class="button">send</button>
               </form>
   
              
