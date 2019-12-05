@@ -6,7 +6,7 @@
     padding: 30px 0px;
     min-height: calc(100vh - 500px)
 }
-
+ 
 .registro__container {
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid white;
@@ -19,82 +19,13 @@
     justify-content: space-around;
     flex-direction: column;
 }
-
+ 
 .registro__container--form {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px
 }
-
-.registro__container--remember label {
-    font-size: 14px;
-}
-
-.registro__container--remember {
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.registro__container--remember a {
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.registro__container--remember a:hover {
-    text-decoration: underline;
-}
-
-.registro__container--socialmedia>div {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.registro__container--socialmedia>div>img {
-    width: 30px;
-    margin-right: 10px;
-}
-
-.registro__container--register {
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-}
-
-.registro__container--register a {
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.registro__container--register a:hover {
-    text-decoration: underline;
-}
-
-.registro__container--iniciarsesion {
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.registro__container--iniciarsesion a {
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.registro__container--iniciarsesion a:hover {
-    text-decoration: underline;
-}
-
+ 
 .input {
     background-color: transparent;
     border: 0px;
@@ -106,42 +37,29 @@
     outline: none;
     color: white;
 }
-
+ 
 .input::placeholder {
     color: white;
 }
-
+ 
 .button {
-    text-decoration: none;
-    border: 6px solid #008c8e;
-    border-radius: 20px;
-    background-color: transparent;
-    font-family: "VT323", monospace;
-    font-weight: bold;
-    color: #008c8e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .button:hover {
-    background-color: #008c8e;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    border: none;
     color: white;
-  }
-  
-  .button > p {
-    font-size: 3em;
-    margin: 0 1em;
-    line-height: 60px;
-  }
-  
-
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}
+ 
 @media only screen and (max-width: 600px) {
     .registro__container {
         background-color: transparent;
         border: none;
         padding: 0px;
         width: 70%;
-       
     }
 }

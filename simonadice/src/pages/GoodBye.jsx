@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import twitter from "../components/images/twitter.png"
-import instagram from "../components/images/instagram.png"
-import meetup from "../components/images/meetup.png";
+import twitter from "../components/images/twitter2.svg"
+import instagram from "../components/images/instagram.svg"
+import meetup from "../components/images/meetup3.svg";
 import "./styles/GoodBye.css"
+
 
 // import "./styles/Home.css";
 
@@ -11,21 +12,19 @@ class Goodbye extends React.Component {
   render() {
     return (
       <section className="contact-us">
-        <p>ENTERATE SI GANASTE</p>
-        <p>ACERCANDOTE AL STAND A LAS</p>
-        <p className="hour">5.30 PM</p>
-
-        <p className="info">seguinos en </p>
-        <p className="info">nuestras redes!</p>
+        <p className="info">¡Seguinos en nuestras redes!</p>
         <div className="wrap-contact">
           <div className="net">
             <div className="logo">
-              <a href="https://www.meetup.com/es/Women-Who-Code-Buenos-Aires/"><img src={twitter} /></a></div>
+              <a className="twitter" href="https://twitter.com/wwcodeba/"><i class="fab fa-twitter"></i></a>
+            </div>
             <div className="logo">
-              <a href="https://www.meetup.com/es/Women-Who-Code-Buenos-Aires/"><img src={meetup} /></a></div>
+              <a classname="meetup" href="https://www.meetup.com/es/Women-Who-Code-Buenos-Aires/"><i class="fab fa-meetup"></i></a>
+              </div>
             <div className="logo">
-              <a href="https://www.instagram.com/wwcodebuenosaires/"><img src={instagram} /></a></div>
+              <a className="instagram" href="https://www.instagram.com/wwcodebuenosaires/"> <i class="fab fa-instagram"></i></a>
           </div>
+        </div>
         </div>
       </section>
     );
@@ -33,3 +32,4 @@ class Goodbye extends React.Component {
 }
 
 export default Goodbye;
+

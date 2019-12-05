@@ -1,10 +1,17 @@
-html {
-    color:white;
+i {
+    color: white;
+    font-size: 50px;
 }
 
 .contact-us{
+    height: 100vh;
     text-align: center;
-    margin-top: 100px
+    margin-top: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .wrap-contact{
     display: flex;
@@ -16,14 +23,20 @@ html {
     justify-content: space-around;
     align-items: center;
     width: 200px;
-    
 }
 
-.logo img{
-    width: 40px;
-    height: 40px;
-    background-color: white;
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+.logo img{
+    width: 100%;
+    height:auto;
+    background-position: center;
+}
+
 
 .hour{
     font-size: 70px;
