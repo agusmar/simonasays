@@ -1,3 +1,6 @@
+body{
+    background-color: black
+}
 .contact-us{
     text-align: center;
     margin-top: 100px
@@ -14,6 +17,13 @@
     width: 200px;
     
 }
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center
+
+}
+
 
 .logo img{
     width: 40px;
