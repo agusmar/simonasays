@@ -36,54 +36,58 @@
 }
 
 .celeste {
-    background: #2b29b4;
+    background: #008c8e;
     top: 0;
     left: 0;
     border-radius: 100% 0 0 0;
+    box-shadow: 0 0 40px #008c8e;
 }
 
 .celeste.light {
-    background: #7ea5c9;
+    background: #27d5d8;
 }
 
 .violeta {
-    background: #cc00ff;
+    background: #F8333C;
     top: 0;
     right: 0;
     border-radius: 0 100% 0 0;
+    box-shadow: 0 0 40px #F8333C;
 }
 
 .violeta.light {
-    background: #e26eff;
+    background: rgb(253, 119, 125);
 }
 
 .naranja {
-    background: #ff8800;
+    background: #30cd52;
     bottom: 0;
     left: 0;
     border-radius: 0 0 0 100%;
+    box-shadow: 0 0 40px #30cd52;
 }
 
 .naranja.light {
-    background: #ffb764;
+    background: #6cf189;
 }
 
 .verde {
-    background: #0daf07;
+    background: #FCAB10;
     bottom: 0;
     right: 0;
     border-radius: 0 0 100% 0;
+    box-shadow: 0 0 40px #FCAB10;
 }
 
 .verde.light {
-    background: #56ff50;
+    background: rgb(250, 194, 89);
 }
 
 .centro {
     position: absolute;
     width: 150px;
     height: 150px;
-    background: #ffffff;
+    background: #222;
     border: 20px solid black;
     border-radius: 50%;
     top: calc(50% - 95px);
@@ -91,30 +95,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: fantasy;
 }
 
 .centroTexto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 50px;
-    width: 120px;
+    width: 100%;
     margin: 0 auto;
-    font-size: 24px;
+    font-size: 2rem;
 }
 
 .btn-start {
+    text-decoration: none;
+    border: 15px solid #333;
+    border-radius: 50%;
+    background-color: #FFF;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "VT323", monospace;
+    font-size: 3rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 3rem;
     width: 200px;
-    height: 100px;
-    position: absolute;
-    top: calc(50% + 30px);
-    left: calc(50% - 100px);
-    font-size: 1.5rem;
-    border-radius: 10%;
-    border: 2px solid white;
-    background-color: #0f4b4d;
-    color: white;
+    height: 200px;
 }
 
 .hide {
@@ -124,5 +134,40 @@
 .score {
     display: block;
     text-align: center;
-    font-size: 2rem;
+    font-size: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.scoreCount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    color: #FFF;
+    font-size: 4rem;
+    text-shadow: 0 0 20px #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swal-modal {
+    overflow: hidden;
+    width: 75%;
+}
+
+.swal-modal .swal-title {
+    font-size: 4rem;
+}
+
+.swal-modal .swal-text {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.swal-button {
+    background-color: #008c8e;
 }

@@ -1,14 +1,18 @@
 html body {
-  background-color: black;
+  background-color: #555;
+  color: #FFF;
+  background-image: url(https://document-export.canva.com/DADtE4d7TtE/11/preview/0001-4275711644.png);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 
 .main-container{
   height: 100vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
 .logo-container {

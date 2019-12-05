@@ -1,64 +1,81 @@
 import React, { Component } from "react";
 // import JuegoJs from "../components/Juego";
+import swal from 'sweetalert';
+import r from 'react-router' 
 import "./styles/Juego.css";
 
-const gameboard = document.getElementById("gameboard");
-const giroMagico = document.querySelector(".rotate");
-const celeste = document.getElementById("celeste");
-const violeta = document.getElementById("violeta");
-const naranja = document.getElementById("naranja");
-const verde = document.getElementById("verde");
-const btnEmpezar = document.getElementById("btnEmpezar");
-const container = document.getElementById("container");
-// const count = document.getElementById("scoreCount");
-const ULTIMO_NIVEL = 5;
-var acumCount = 0;
-
 class JuegoJS extends Component {
-  constructor() {
+  constructor(props) {
+    super(props);
+
     this.inicializar = this.inicializar.bind(this);
+    this.elegirColor = this.elegirColor.bind(this);
+    this.iluminarColor = this.iluminarColor.bind(this);
+    this.iluminarSecuencia = this.iluminarSecuencia.bind(this);
     this.btnEmpezar = React.createRef();
     this.container = React.createRef();
-    this.inicializar(); // Podemos declarar cualquier método/accion de THIS (o sea de JUEGO) aunque no exista, y después escribirla
+    // this.inicializar(); // Podemos declarar cualquier método/accion de THIS (o sea de JUEGO) aunque no exista, y después escribirla
+  }
+
+  inicializar () {
+    this.domRefs = {
+      gameboard: document.getElementById("gameboard"),
+      giroMagico: document.querySelector(".rotate"),
+      celeste: document.getElementById("celeste"),
+      violeta: document.getElementById("violeta"),
+      naranja: document.getElementById("naranja"),
+      verde: document.getElementById("verde"),
+      btnEmpezar: document.getElementById("btnEmpezar"),
+      container: document.getElementById("container"),
+      // count: document.getElementById("scoreCount");
+    }
+
+    
+    
+    this.ULTIMO_NIVEL = 8;
+    this.acumCount = 0;
+    this.subnivel = 0;
+
+    this.colores = {
+      celeste: this.domRefs.celeste,
+      violeta: this.domRefs.violeta,
+      naranja: this.domRefs.naranja,
+      verde: this.domRefs.verde
+    };
+
+    // document.getElementById("scoreCount").innerHTML = 0;
+    this.siguienteNivel = this.siguienteNivel.bind(this);
+    // this.elegirColor = this.elegirColor.bind(this);
+    // this.elegirColor = this.Juego.bind(this);
+    this.toggleBtnEmpezar();
+    this.nivel = 1;
+    this.acumRotar = 0;
+
     this.generarSecuencia();
     setTimeout(this.siguienteNivel, 500);
   }
 
-  inicializar() {
-    // document.getElementById("scoreCount").innerHTML = 0;
-    this.siguienteNivel = this.siguienteNivel.bind(this);
-    this.elegirColor = this.elegirColor.bind(this);
-    this.toggleBtnEmpezar();
-    this.nivel = 1;
-    this.acumRotar = 0;
-    this.colores = {
-      celeste,
-      violeta,
-      naranja,
-      verde
-    };
-  }
-
   toggleBtnEmpezar() {
-    if (this.btnEmpezar.classList.contains("hide")) {
-      this.btnEmpezar.classList.remove("hide");
-      this.container.classList.add("blur");
+    if (this.domRefs.btnEmpezar.classList.contains("hide")) {
+      this.domRefs.btnEmpezar.classList.remove("hide");
+      this.domRefs.container.classList.add("blur");
     } else {
-      this.btnEmpezar.classList.add("hide");
-      this.container.classList.remove("blur");
+      this.domRefs.btnEmpezar.classList.add("hide");
+      this.domRefs.container.classList.remove("blur");
     }
   }
 
   generarSecuencia() {
-    this.secuencia = new Array(ULTIMO_NIVEL)
+    this.secuencia = new Array(this.ULTIMO_NIVEL)
       .fill(0)
       .map(n => Math.floor(Math.random() * 4));
   }
 
   siguienteNivel() {
     this.subnivel = 0;
+    this.eliminarEventosClick();
     this.iluminarSecuencia();
-    this.agregarEventosClick();
+    // setTimeout(() => this.agregarEventosClick(), 0);
   }
 
   transformarNumeroAColor(numero) {
@@ -74,7 +91,7 @@ class JuegoJS extends Component {
     }
   }
 
-  transformarColoraNumero(color) {
+  transfColoraNumero(color) {
     switch (color) {
       case "celeste":
         return 0;
@@ -90,7 +107,14 @@ class JuegoJS extends Component {
   iluminarSecuencia() {
     for (let i = 0; i < this.nivel; i++) {
       let color = this.transformarNumeroAColor(this.secuencia[i]);
-      setTimeout(() => this.iluminarColor(color), 1000 * i);
+      setTimeout(() => {
+        this.iluminarColor(color);
+        
+        if (i == (this.nivel - 1)) {
+          this.agregarEventosClick();
+        }
+      }, 1000 * i + 1);
+
     }
   }
 
@@ -119,18 +143,17 @@ class JuegoJS extends Component {
 
   elegirColor(ev) {
     const nombreColor = ev.target.dataset.color;
-    const numeroColor = this.transformarColoraNumero(nombreColor);
+    const numeroColor = this.transfColoraNumero(nombreColor);
     this.iluminarColor(nombreColor);
     if (numeroColor === this.secuencia[this.subnivel]) {
       this.subnivel++;
       if (this.subnivel === this.nivel) {
         this.nivel++;
         this.eliminarEventosClick();
-        if (this.nivel === ULTIMO_NIVEL + 1) {
+        if (this.nivel === this.ULTIMO_NIVEL + 1) {
           this.displayCounter();
           this.ganoElJuego();
           this.resetCount();
-          this.acumRotar = 0;
           this.resetRotar();
         } else {
           this.rotar();
@@ -141,60 +164,64 @@ class JuegoJS extends Component {
     } else {
       this.perdioElJuego();
       this.resetCount();
-      this.acumRotar = 0;
       this.resetRotar();
     }
   }
 
   displayCounter() {
-    document.getElementById("scoreCount").innerHTML = acumCount += 1;
+    document.getElementById("scoreCount").innerHTML = this.acumCount += 1;
   }
 
   resetCount() {
-    return (acumCount = 0);
+    return (this.acumCount = 0);
   }
 
   rotar() {
     this.acumRotar += 45;
-    gameboard.style.transform = `rotate(${this.acumRotar}deg)`;
+    this.domRefs.gameboard.style.transform = `rotate(${this.acumRotar}deg)`;
   }
 
   resetRotar() {
-    gameboard.style.transform = `rotate(0deg)`;
-    return (this.acumRotar = 0);
+    this.domRefs.gameboard.style.transform = `rotate(0deg)`;
+    this.acumRotar = 0;
   }
 
   ganoElJuego() {
-    console.log("GANASTE").then(() => {
+    swal({
+      title: "GANASTE",
+      text: '¡Participas del sorteo!',
+      icon: 'https://media.tenor.com/images/9d120658658c120ef86628105f42a89e/tenor.gif',
+      button: "¡Yay!",
+    }).then(() => {
       this.inicializar();
+      this.props.history.push('/register')
     });
   }
 
   perdioElJuego() {
-    // swal(
-    //   "UPSSS",
-    //   `Seguí intentando! Tu puntaje fue de ${acumCount}`,
-    //   "error"
-    console.log("PERDISTE").then(() => {
+    swal({
+      title: "PERDISTE",
+      text: '¡Seguí intentando!',
+      icon: 'https://media0.giphy.com/media/11o8iIgiTvbNNC/source.gif'
+    }).then(() => {
       this.eliminarEventosClick();
       this.inicializar();
     });
   }
-}
 
-const pepito = new JuegoJS();
-
-function Juego() {
-  return (
+  render (props) {
+    console.log(this.props);
+    
+    return (
     <React.Fragment>
-      <div id="container" ref={this.container} className="container blur">
+      <div id="container" className="container blur">
         <div className="score">
-          Score:
           <div id="scoreCount" className="scoreCount">
             0
           </div>
         </div>
-        <div class="grid">
+  
+        <div className="grid">
           <div id="gameboard" className="gameboard">
             <div
               id="celeste"
@@ -213,21 +240,26 @@ function Juego() {
             ></div>
             <div id="verde" className="verde botones" data-color="verde"></div>
             <div className="centro">
-              <div className="centroTexto">SIMONA</div>
+              <div className="centroTexto">simona</div>
             </div>
           </div>
         </div>
       </div>
       <button
         id="btnEmpezar"
-        ref={this.btnEmpezar}
         className="btn-start"
-        onClick={pepito.inicializar()}
+        onClick={this.inicializar}
       >
-        Empezar a jugar!
+        PLAY
       </button>
     </React.Fragment>
-  );
+    )
+  }
 }
 
-export default Juego;
+// const pepito = new JuegoJS();
+
+// function Juego() {
+// }
+
+export default JuegoJS;

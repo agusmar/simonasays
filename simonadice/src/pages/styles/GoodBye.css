@@ -1,11 +1,24 @@
-.contact-us{
+.contact-us {
     text-align: center;
-    margin-top: 100px
+    width: 100%;
 }
+
+.contact-us p {
+    font-size: 1.9rem;
+    padding: 0 1rem;
+}
+
+.contact-us .contact-logo {
+    display: inline-block;
+    max-width: 250px;
+}
+
 .wrap-contact{
     display: flex;
     justify-content: center;
-    margin-top: 50px
+    margin-top: 50px;
+    background-color: #FFF;
+    padding: 25px;
 }
 .net{
     display: flex;
@@ -20,13 +33,12 @@
     height: 40px;
 }
 
-.hour{
+.contact-us .hour{
     font-size: 70px;
     font-weight: 900;
     margin: 40px
 }
 
-.info{
-    font-size: 20px;
-    margin: 10px
+.contact-us .info{
+    margin: 30% 0px 0;
 }
